@@ -40,8 +40,15 @@
     //inserisco i dati nel db
     $result = $link->query($sql_insert);
 
+    //creo le variabili di sessione
+
+    $_SESSION['cognome'] = $cognome;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['user'] = $user;
+
     if($result) {
-        echo "dati inseriti";
+        /* echo "dati inseriti"; */
+        header("location:benvenuto.php");
     } else {
         echo "dati non inseriti";
     }
